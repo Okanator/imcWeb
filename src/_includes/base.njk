@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.seo_naslov }}</title>
+<meta name="description" content="{{ site.seo_opis }}">
+<meta property="og:title" content="{{ site.seo_naslov }}">
+<meta property="og:description" content="{{ site.seo_opis }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta name="theme-color" content="#0E0E0E">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;600&family=Bebas+Neue&family=Josefin+Sans:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+{{ content | safe }}
+</body>
+</html>

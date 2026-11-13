@@ -1,0 +1,99 @@
+# Urejevalnik vsebine IMC MP (Decap CMS)
+# Prijava poteka z GitHub računom, ki ima dostop do repozitorija.
+backend:
+  name: github
+  repo: Okanator/imcWeb
+  branch: main
+  # prijava prek lastne funkcije na Cloudflare Pages (functions/api/auth.js); naslov strani doda admin/index.html
+  auth_endpoint: api/auth
+  commit_messages:
+    create: 'Nov vnos: {{collection}} „{{slug}}“'
+    update: 'Posodobitev: {{collection}} „{{slug}}“'
+    delete: 'Izbris: {{collection}} „{{slug}}“'
+    uploadMedia: 'Nalaganje: {{path}}'
+    deleteMedia: 'Izbris datoteke: {{path}}'
+
+site_url: https://imc-mp.pages.dev
+display_url: https://imc-mp.pages.dev
+
+media_folder: src/img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: projekti
+    label: Projekti
+    label_singular: Projekt
+    description: Oglasi, filmi, oddaje … za katere ste uredili glasbo. Prikažejo se po vrstnem redu (1 je prvi).
+    folder: src/content/projekti
+    create: true
+    slug: '{{slug}}'
+    sortable_fields: ['vrstni_red', 'title']
+    summary: '{{vrstni_red}} · {{kategorija}} · {{title}}'
+    fields:
+      - { name: title, label: Naslov (naročnik / film / oddaja), widget: string }
+      - { name: kategorija, label: Vrsta, widget: select, options: ['Oglas', 'Film', 'TV', 'Splet', 'Dogodek', 'Igra', 'Drugo'] }
+      - { name: skladba, label: Skladba – izvajalec, widget: string, required: false, hint: 'npr. »Skladba – Izvajalec« ali »Produkcijska glasba«' }
+      - { name: leto, label: Leto, widget: string, required: false }
+      - { name: slika, label: Slika, widget: image, required: false, hint: 'ležeča slika, razmerje 16:10' }
+      - { name: povezava, label: Povezava (YouTube ipd.), widget: string, required: false, hint: 'kartica postane klikljiva' }
+      - { name: vrstni_red, label: Vrstni red, widget: number, value_type: int, default: 10 }
+      - { name: prikazano, label: Prikazano na strani, widget: boolean, required: false, default: true }
+
+  - name: nastavitve
+    label: Nastavitve strani
+    files:
+      - name: site
+        label: Besedila in kontakt
+        file: src/_data/site.json
+        fields:
+          - { name: ime, label: Ime, widget: hidden }
+          - { name: url, label: Naslov strani (URL), widget: string }
+          - { name: seo_naslov, label: Naslov za iskalnike, widget: string }
+          - { name: seo_opis, label: Opis za iskalnike, widget: text }
+          - name: uvod
+            label: Uvod
+            widget: object
+            fields:
+              - { name: nadnaslov, label: Nadnaslov, widget: string }
+              - { name: naslov, label: Velik naslov, widget: string }
+              - { name: besedilo, label: Besedilo, widget: text }
+              - { name: gumb_repertoar, label: Gumb 1 (repertoar), widget: string }
+              - { name: gumb_produkcijska, label: Gumb 2 (produkcijska glasba), widget: string }
+          - name: repertoar
+            label: Kartica 01 – Universal Music Publishing
+            widget: object
+            fields:
+              - { name: naslov, label: Naslov, widget: string }
+              - { name: besedilo, label: Besedilo, widget: text }
+              - { name: seznam, label: Seznam, widget: list, field: { name: vrstica, label: Vrstica, widget: string } }
+              - { name: gumb, label: Besedilo gumba, widget: string }
+              - { name: povezava, label: Povezava gumba, widget: string }
+          - name: produkcijska
+            label: Kartica 02 – Universal Production Music
+            widget: object
+            fields:
+              - { name: naslov, label: Naslov, widget: string }
+              - { name: besedilo, label: Besedilo, widget: text }
+              - { name: seznam, label: Seznam, widget: list, field: { name: vrstica, label: Vrstica, widget: string } }
+              - { name: gumb, label: Besedilo gumba, widget: string }
+              - { name: povezava, label: Povezava gumba, widget: string }
+          - name: projekti
+            label: Sekcija Projekti
+            widget: object
+            fields:
+              - { name: naslov, label: Naslov, widget: string }
+              - { name: besedilo, label: Besedilo, widget: text }
+          - name: kontakt
+            label: Kontakt
+            widget: object
+            fields:
+              - { name: naslov, label: Naslov, widget: string }
+              - { name: besedilo, label: Besedilo, widget: text }
+              - name: osebe
+                label: Osebe
+                widget: list
+                fields:
+                  - { name: ime, label: Ime in priimek, widget: string }
+                  - { name: email, label: E-pošta, widget: string }
+                  - { name: telefon, label: Telefon, widget: string }
+          - { name: noga, label: Vrstica v nogi, widget: string }

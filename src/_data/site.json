@@ -1,0 +1,40 @@
+{
+  "ime": "IMC MP",
+  "url": "https://imc-mp.pages.dev",
+  "seo_naslov": "IMC MP Publishing – Universal Music Publishing v Sloveniji",
+  "seo_opis": "IMC MP d.o.o. je uradni zastopnik Universal Music Publishing v Sloveniji, ki ponuja bogat repertoar in produkcijsko glasbo za različne medijske projekte.",
+  "uvod": {
+    "nadnaslov": "IMC MP d.o.o. · Publishing",
+    "naslov": "Glasba za vaš projekt",
+    "besedilo": "IMC MP d.o.o. je uradni zastopnik Universal Music Publishing v Sloveniji. Ponujamo bogat repertoar in produkcijsko glasbo za oglase, film, televizijo, splet in druge medijske projekte.",
+    "gumb_repertoar": "Licenciranje skladb",
+    "gumb_produkcijska": "Produkcijska glasba"
+  },
+  "repertoar": {
+    "naslov": "Universal Music Publishing",
+    "besedilo": "Celoten repertoar Universal Music Publishing za sinhronizacijo – znane skladbe za oglaševalske kampanje, filme, serije in drugo avdiovizualno vsebino. Pomagamo pri izbiri skladbe in uredimo licenco.",
+    "seznam": ["Oglasi in kampanje", "Film in televizija", "Splet, igre in dogodki"],
+    "gumb": "Brskaj po repertoarju",
+    "povezava": "https://www.umusicpub.com/si/"
+  },
+  "produkcijska": {
+    "naslov": "Universal Production Music",
+    "besedilo": "Produkcijska glasba, pripravljena za takojšnjo uporabo – po žanru, razpoloženju in tempu. Hitra rešitev za produkcije, ki potrebujejo kakovostno glasbo brez zapletenega dogovarjanja.",
+    "seznam": ["Iskanje po žanru in razpoloženju", "Prenos posnetkov in stemov", "Licenca urejena lokalno"],
+    "gumb": "Odpri katalog",
+    "povezava": "https://www.universalproductionmusic.com/en-row"
+  },
+  "projekti": {
+    "naslov": "Projekti",
+    "besedilo": "Izbor oglasov, filmov in oddaj, za katere smo uredili glasbo iz kataloga Universal."
+  },
+  "kontakt": {
+    "naslov": "Kontakt",
+    "besedilo": "Pišite nam, kaj pripravljate – medij, trajanje in ozemlje uporabe – in predlagamo glasbo ter pogoje.",
+    "osebe": [
+      { "ime": "Tamma Žbontar", "email": "tamma.zbontar@imc-mp.com", "telefon": "+386 41 524 524" },
+      { "ime": "Oskar Cafnik", "email": "oskar.cafnik@imc-mp.com", "telefon": "+386 41 637 471" }
+    ]
+  },
+  "noga": "IMC MP d.o.o. – uradni zastopnik Universal Music Publishing v Sloveniji"
+}

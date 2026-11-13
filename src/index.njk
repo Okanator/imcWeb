@@ -1,0 +1,122 @@
+---
+layout: base.njk
+permalink: /
+---
+{%- set u = site.uvod -%}
+{%- set r = site.repertoar -%}
+{%- set p = site.produkcijska -%}
+{%- set k = site.kontakt -%}
+
+<header class="header">
+  <div class="wrap header-inner">
+    <div class="brandrow">
+      <span class="rule" aria-hidden="true"></span>
+      <a href="#top" class="wordmark">IMC MP</a>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <nav class="nav" aria-label="Glavni meni">
+      <a href="#repertoar">Repertoar</a>
+      <a href="#produkcijska">Produkcijska glasba</a>
+      {% if collections.projekti.length %}<a href="#projekti">Projekti</a>{% endif %}
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">{{ u.nadnaslov }}</p>
+        <h1 class="hero-h1">{{ u.naslov }}</h1>
+        <p class="hero-p">{{ u.besedilo }}</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="#repertoar" class="btn btn-accent btn-block">{{ u.gumb_repertoar }} <span aria-hidden="true">→</span></a>
+        <a href="#produkcijska" class="btn btn-outline-light btn-block">{{ u.gumb_produkcijska }} <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offers wrap" aria-label="Ponudba">
+    <article id="repertoar" class="card card-light">
+      <span class="card-num">01</span>
+      <h2 class="card-h2">{{ r.naslov }}</h2>
+      <p class="card-p">{{ r.besedilo }}</p>
+      <ul class="list">{% for i in r.seznam %}<li>{{ i }}</li>{% endfor %}</ul>
+      <div class="btnrow">
+        <a href="{{ r.povezava }}" target="_blank" rel="noopener" class="btn btn-dark">{{ r.gumb }} ↗</a>
+        <a href="#kontakt" class="btn btn-outline">Povpraševanje</a>
+      </div>
+    </article>
+    <article id="produkcijska" class="card card-dark">
+      <span class="card-num">02</span>
+      <h2 class="card-h2">{{ p.naslov }}</h2>
+      <p class="card-p">{{ p.besedilo }}</p>
+      <ul class="list">{% for i in p.seznam %}<li>{{ i }}</li>{% endfor %}</ul>
+      <div class="btnrow">
+        <a href="{{ p.povezava }}" target="_blank" rel="noopener" class="btn btn-accent">{{ p.gumb }} ↗</a>
+      </div>
+    </article>
+  </section>
+
+  {% if collections.projekti.length %}
+  <section id="projekti" class="projects">
+    <div class="wrap projects-inner">
+      <div class="section-head">
+        <h2 class="section-h2">{{ site.projekti.naslov }}</h2>
+        <p class="lead">{{ site.projekti.besedilo }}</p>
+      </div>
+      <div class="projects-grid">
+        {% for pr in collections.projekti %}{% set d = pr.data %}
+        <article class="project">
+          {% if d.povezava %}<a class="project-link" href="{{ d.povezava }}" target="_blank" rel="noopener" aria-label="{{ d.title }}"></a>{% endif %}
+          <div class="project-media">
+            {% if d.slika %}<img src="{{ d.slika }}" alt="{{ d.title }}" loading="lazy">{% else %}<span>[slika ali video]</span>{% endif %}
+          </div>
+          <div class="project-body">
+            {% if d.kategorija %}<span class="tag">{{ d.kategorija }}</span>{% endif %}
+            <h3 class="project-title">{{ d.title }}</h3>
+            <p class="project-meta">{{ d.skladba }}{% if d.skladba and d.leto %} · {% endif %}{{ d.leto }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section id="kontakt" class="contact">
+    <div class="wrap contact-inner">
+      <div class="contact-intro">
+        <h2 class="section-h2">{{ k.naslov }}</h2>
+        <p class="lead">{{ k.besedilo }}</p>
+      </div>
+      <div class="contact-grid">
+        {% for o in k.osebe %}
+        <div class="person">
+          <span class="person-name">{{ o.ime }}</span>
+          <a href="mailto:{{ o.email }}">{{ o.email }}</a>
+          <a href="tel:{{ o.telefon | tel }}">{{ o.telefon }}</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span class="footer-mark">IMC MP</span>
+    <div class="footer-contacts">
+      {% for o in k.osebe %}
+      <div class="footer-person">
+        <span class="footer-name">{{ o.ime }}</span>
+        <a href="mailto:{{ o.email }}">{{ o.email }}</a>
+        <a href="tel:{{ o.telefon | tel }}">{{ o.telefon }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="footer-note">{{ site.noga }}</p>
+  </div>
+</footer>

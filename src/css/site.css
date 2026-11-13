@@ -1,0 +1,140 @@
+/* IMC MP – črna, bela in starinsko zlato */
+:root {
+  --ink: #0E0E0E;
+  --ink-2: #1A1A19;
+  --ink-3: #2A2A28;
+  --line-dark: #2E2E2C;
+  --paper: #FFFFFF;
+  --paper-2: #F2F2F0;
+  --line: #D9D9D5;
+  --muted: #5A5A57;
+  --muted-light: #B5B5B0;
+  --gold: #C8A15A;
+  --gold-hover: #DDBB7A;
+  --f-display: 'Bebas Neue', Impact, sans-serif;
+  --f-head: 'Antonio', 'Arial Narrow', sans-serif;
+  --f-label: 'Josefin Sans', 'Helvetica Neue', sans-serif;
+  --f-body: 'Open Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+p, h1, h2, h3, ul { margin: 0; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.wrap { max-width: 1360px; margin-inline: auto; padding-inline: 24px; }
+
+/* Glava */
+.header { background: var(--paper); }
+.header-inner { padding-top: 22px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.brandrow { width: 100%; display: flex; align-items: center; gap: 28px; }
+.rule { flex: 1 1 0; height: 1px; background: var(--ink); }
+.wordmark { font-family: var(--f-display); font-size: 44px; line-height: 1; letter-spacing: 4px; }
+.wordmark:hover { color: var(--gold); }
+.nav { display: flex; flex-wrap: wrap; justify-content: center; column-gap: 34px; padding-bottom: 6px; }
+.nav a { padding: 14px 0; font-family: var(--f-label); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; }
+.nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
+
+/* Gumbi */
+.btn { display: inline-block; padding: 16px 20px; font-family: var(--f-label); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid transparent; transition: background-color .15s, color .15s; }
+.btn-block { display: block; padding: 20px 22px; font-size: 13px; letter-spacing: 3px; }
+.btn-accent { background: var(--gold); color: var(--ink); }
+.btn-accent:hover { background: var(--gold-hover); }
+.btn-dark { background: var(--ink); color: var(--paper); }
+.btn-dark:hover { background: var(--gold); color: var(--ink); }
+.btn-outline { border-color: var(--ink); color: var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--paper); }
+.btn-outline-light { border-color: var(--paper); color: var(--paper); }
+.btn-outline-light:hover { background: var(--paper); color: var(--ink); }
+
+/* Uvod */
+.hero { background: var(--ink); color: var(--paper); }
+.hero-inner { padding-top: 96px; padding-bottom: 88px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 48px; }
+.hero-text { flex: 1 1 640px; display: flex; flex-direction: column; gap: 22px; }
+.eyebrow { font-family: var(--f-label); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+.hero-h1 { font-family: var(--f-display); font-weight: 400; font-size: clamp(64px, 11vw, 168px); line-height: .85; }
+.hero-p { max-width: 620px; font-size: 19px; line-height: 1.7; color: var(--muted-light); }
+.hero-ctas { flex: 0 1 360px; display: flex; flex-direction: column; gap: 12px; }
+
+/* Ponudba */
+.offers { padding-top: 112px; padding-bottom: 96px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card { padding: 56px 48px; display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 24px; }
+.card-light { background: var(--paper-2); }
+.card-dark { background: var(--ink); color: var(--paper); }
+.card-num { font-family: var(--f-display); font-size: 34px; line-height: 1; }
+.card-dark .card-num { color: var(--gold); }
+.card-h2 { font-family: var(--f-head); font-weight: 400; font-size: 40px; line-height: 1.1; letter-spacing: 4px; text-transform: uppercase; }
+.card-p { font-size: 17px; line-height: 1.7; color: var(--muted); }
+.card-dark .card-p { color: var(--muted-light); }
+.list { padding: 0; list-style: none; border-top: 2px solid var(--ink); }
+.card-dark .list { border-top-color: var(--gold); }
+.list li { padding: 16px 0; border-bottom: 1px solid var(--line); font-family: var(--f-head); font-size: 20px; letter-spacing: 1.6px; text-transform: uppercase; }
+.card-dark .list li { border-bottom-color: var(--line-dark); }
+.btnrow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; }
+
+/* Naslovi sekcij */
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.section-h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(60px, 8vw, 104px); line-height: .9; }
+.lead { max-width: 440px; font-size: 16px; line-height: 1.7; color: var(--muted); }
+
+/* Projekti */
+.projects { background: var(--ink); color: var(--paper); }
+.projects .lead { color: var(--muted-light); }
+.projects-inner { padding-top: 112px; padding-bottom: 112px; display: flex; flex-direction: column; gap: 48px; }
+.projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.project { position: relative; display: flex; flex-direction: column; background: var(--ink-2); transition: background-color .15s; }
+.project:hover { background: #232322; }
+.project-link { position: absolute; inset: 0; z-index: 1; }
+.project-media { position: relative; aspect-ratio: 16 / 10; background: var(--ink-3); overflow: hidden; }
+.project-media img { width: 100%; height: 100%; object-fit: cover; }
+.project-media span { position: absolute; left: 16px; bottom: 16px; font-size: 12px; color: var(--muted-light); }
+.project-body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; }
+.tag { align-self: flex-start; background: var(--gold); color: var(--ink); padding: 6px 10px; font-family: var(--f-label); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+.project-title { font-family: var(--f-head); font-weight: 400; font-size: 26px; line-height: 1.15; letter-spacing: 2px; text-transform: uppercase; }
+.project-meta { font-size: 14px; color: var(--muted-light); }
+
+/* Kontakt */
+.contact { background: var(--paper-2); }
+.contact-inner { padding-top: 96px; padding-bottom: 96px; display: flex; flex-wrap: wrap; gap: 56px; }
+.contact-intro { flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px; }
+.contact-grid { flex: 2 1 560px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.person { background: var(--paper); padding: 32px 28px; display: flex; flex-direction: column; gap: 10px; border-top: 4px solid var(--gold); }
+.person-name { font-family: var(--f-head); font-size: 26px; letter-spacing: 2.6px; text-transform: uppercase; }
+.person a { padding: 4px 0; font-size: 16px; overflow-wrap: anywhere; }
+.person a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Noga */
+.footer { background: var(--ink); color: var(--paper); }
+.footer-inner { padding-top: 64px; padding-bottom: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+.footer-mark { font-family: var(--f-display); font-size: 56px; line-height: 1; letter-spacing: 5px; }
+.footer-contacts { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 64px; padding: 8px 0; }
+.footer-person { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.footer-name { font-family: var(--f-head); font-size: 20px; letter-spacing: 2px; text-transform: uppercase; }
+.footer-person a { padding: 4px 0; font-size: 15px; color: #E6E6E3; }
+.footer-person a:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 4px; }
+.footer-note { font-size: 13px; line-height: 1.7; color: var(--muted-light); }
+
+/* Tablica */
+@media (max-width: 991px) {
+  .offers { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* Telefon */
+@media (max-width: 767px) {
+  .nav { column-gap: 20px; }
+  .nav a { font-size: 12px; letter-spacing: 2px; }
+  .hero-inner { padding-top: 64px; padding-bottom: 64px; }
+  .hero-text, .hero-ctas { flex-basis: 100%; }
+  .offers { padding-top: 64px; padding-bottom: 64px; }
+  .card { padding: 40px 24px; }
+  .card-h2 { font-size: 32px; }
+  .projects-inner, .contact-inner { padding-top: 64px; padding-bottom: 72px; }
+  .contact-grid { grid-template-columns: 1fr; flex-basis: 100%; }
+}
+@media (max-width: 479px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .hero-p { font-size: 17px; }
+}
